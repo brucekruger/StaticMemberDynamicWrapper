@@ -93,10 +93,7 @@ namespace StaticMemberDynamicWrapper
             return true;
         }
 
-        private FieldInfo FindField(string name)
-        {
-            return m_type.DeclaredFields.FirstOrDefault(fi => fi.IsPublic && fi.IsStatic && fi.Name == name);
-        }
+        private FieldInfo FindField(string name) => m_type.DeclaredFields.FirstOrDefault(fi => fi.IsPublic && fi.IsStatic && fi.Name == name);
 
         private PropertyInfo FindProperty(string name, bool get)
         {
